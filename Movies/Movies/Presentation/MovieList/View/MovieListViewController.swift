@@ -22,7 +22,6 @@ class MovieListViewController: UIViewController, MovieListViewModelDelegate {
         let movieListUseCase = FetchPopularMoviesUseCase(movieListRepository)
         self.movieListViewModel = MovieListViewModel(movieListUseCase, delegate: self)
         
-        // maybe in willAppear
         self.movieListViewModel?.loadPopularMovies()
         
     }

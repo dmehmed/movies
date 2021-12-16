@@ -12,6 +12,7 @@ public struct Movie {
     let id: Int?
     let title: String?
     let releaseDate: String?
+    let posterPath: String?
     
 }
 
@@ -21,6 +22,7 @@ extension Movie: Decodable {
         case id
         case title
         case releaseDate = "release_date"
+        case posterPath = "poster_path"
     }
     
 }

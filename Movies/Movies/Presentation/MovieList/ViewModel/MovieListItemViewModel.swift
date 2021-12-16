@@ -11,10 +11,19 @@ public struct MovieListItemViewModel {
     
     let title: String
     let releaseDate: String
+    let posterPath: String?
     
     public init(_ movie: Movie) {
+        
         self.title = movie.title ?? ""
-        self.releaseDate = movie.releaseDate ?? ""
+        self.posterPath = movie.posterPath
+        
+        if let releaseDate = movie.releaseDate {
+            self.releaseDate = "Release date: \(releaseDate)"
+        } else {
+            self.releaseDate = "To be announced..."
+        }
+        
     }
     
 }
