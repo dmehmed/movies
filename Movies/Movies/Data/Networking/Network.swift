@@ -11,9 +11,9 @@ public class Network {
     
     private var baseURL = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=87c18a6eca3e6995e82fab7f60b9a8a7")
     
-    public func perform(with completion: @escaping (MovieList?) -> Void) {
-//        let task1 = URLSession.shared.datata
-        let task = URLSession.shared.dataTask(with: self.baseURL!) { data, response, error in
+    public func perform(_ request: PopularMoviesRequest, with completion: @escaping (MovieList?) -> Void) {
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: request.url)) { data, response, error in
             
             guard let data = data else {
                 

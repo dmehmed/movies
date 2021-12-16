@@ -14,7 +14,7 @@ public protocol MovieListServiceProtocol {
 public class MovieListService: Service, MovieListServiceProtocol {
     
     public func getPopularMovies(_ completion: @escaping (MovieList?) -> Void) {
-        // TODO: - request, perform request with compl
+        network.perform(PopularMoviesRequest(), with: completion)
     }
     
 }
