@@ -8,15 +8,14 @@
 import Foundation
 
 public protocol MovieListViewModelDelegate {
-    func refreshList(_ movieList: MovieList?)
+    func refreshList(_ movies: [MovieListItemViewModel])
 }
 
-// TO DO: is it needed?
 public protocol MovieListViewModelProtocol {
-    func getPopularMovies()
+    func loadPopularMovies()
 }
 
-public struct MoviewListViewModel: MovieListViewModelProtocol {
+public struct MovieListViewModel: MovieListViewModelProtocol {
     
     private let useCase: FetchPopularMoviesUseCase
     private let delegate: MovieListViewModelDelegate
@@ -26,12 +25,22 @@ public struct MoviewListViewModel: MovieListViewModelProtocol {
         self.delegate = delegate
     }
     
-    public func getPopularMovies() {
+    public func loadPopularMovies() {
         
         self.useCase.execute { data in
-            self.delegate.refreshList(data)
+            
+            guard let movies = self.getMovieListItemViewModels(from: data) else {
+                return
+            }
+            
+            self.delegate.refreshList(movies)
+            
         }
         
+    }
+    
+    private func getMovieListItemViewModels(from data: MovieList?) -> [MovieListItemViewModel]? {
+        data?.results?.compactMap(MovieListItemViewModel.init)
     }
     
 }
