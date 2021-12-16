@@ -10,6 +10,8 @@ import UIKit
 
 public class MovieListItemTableViewCell: UITableViewCell {
     
+    static let reuseIdentifier = String(describing: MovieListItemTableViewCell.self)
+    
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var releaseDateLabel: UILabel!
