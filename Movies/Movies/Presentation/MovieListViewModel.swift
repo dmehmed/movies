@@ -7,21 +7,26 @@
 
 import Foundation
 
-public protocol MovieListViewModelProtocol {
+public protocol MovieListViewModelDelegate {
     func refreshList(_ movieList: MovieList?)
 }
 
-public struct MoviewListViewModel {
+// TO DO: is it needed?
+public protocol MovieListViewModelProtocol {
+    func getPopularMovies()
+}
+
+public struct MoviewListViewModel: MovieListViewModelProtocol {
     
     private let useCase: FetchPopularMoviesUseCase
-    private let delegate: MovieListViewModelProtocol
+    private let delegate: MovieListViewModelDelegate
     
-    public init(_ useCase: FetchPopularMoviesUseCase, delegate: MovieListViewModelProtocol) {
+    public init(_ useCase: FetchPopularMoviesUseCase, delegate: MovieListViewModelDelegate) {
         self.useCase = useCase
         self.delegate = delegate
     }
     
-    public func loadPopularMovies() {
+    public func getPopularMovies() {
         
         self.useCase.execute { data in
             self.delegate.refreshList(data)

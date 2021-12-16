@@ -15,7 +15,6 @@ public struct Movie {
     
 }
 
-
 extension Movie: Decodable {
     
     enum CodingKeys: String, CodingKey {

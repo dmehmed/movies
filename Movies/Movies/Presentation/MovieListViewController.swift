@@ -7,8 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class MovieListViewController: UIViewController, MovieListViewModelDelegate {
+    
+    @IBOutlet weak var movieListTableView: UITableView!
+    
+    private var movieListViewModel: MovieListViewModelProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -16,11 +20,15 @@ class ViewController: UIViewController {
         let movieListService = MovieListService()
         let movieListRepository = PopularMoviesRepository(movieListService)
         let movieListUseCase = FetchPopularMoviesUseCase(movieListRepository)
-        // to do view model with use case, stored property
+        self.movieListViewModel = MoviewListViewModel(movieListUseCase, delegate: self)
         
+        self.movieListViewModel?.loadPopularMovies()
         
     }
-
-
+    
+    func refreshList(_ movieList: MovieList?) {
+        // adapter reload data
+    }
+    
 }
 
