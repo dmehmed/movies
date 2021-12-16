@@ -12,10 +12,13 @@ class MovieListViewController: UIViewController, MovieListViewModelDelegate {
     @IBOutlet weak var movieListTableView: UITableView!
     
     private var movieListViewModel: MovieListViewModelProtocol?
+    private var movieListTableViewAdapter: MovieListTableView?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        movieListTableViewAdapter = MovieListTableViewAdapter(movieListTableView)
         
         let movieListService = MovieListService()
         let movieListRepository = PopularMoviesRepository(movieListService)
@@ -27,7 +30,7 @@ class MovieListViewController: UIViewController, MovieListViewModelDelegate {
     }
     
     func refreshList(_ movies: [MovieListItemViewModel]) {
-        // adapter takes care of refresh
+        movieListTableViewAdapter?.reload(movies)
     }
     
 }
