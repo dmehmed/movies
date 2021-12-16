@@ -23,7 +23,7 @@ public class MovieListItemTableViewCell: UITableViewCell {
         self.viewModel = viewModel
         
         self.titleLabel.text = viewModel.title
-        self.releaseDateLabel.text = viewModel.title
+        self.releaseDateLabel.text = viewModel.releaseDate
         
         self.updatePoster()
         
