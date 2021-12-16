@@ -14,20 +14,21 @@ class MovieListViewController: UIViewController, MovieListViewModelDelegate {
     private var movieListViewModel: MovieListViewModelProtocol?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         let movieListService = MovieListService()
         let movieListRepository = PopularMoviesRepository(movieListService)
         let movieListUseCase = FetchPopularMoviesUseCase(movieListRepository)
-        self.movieListViewModel = MoviewListViewModel(movieListUseCase, delegate: self)
+        self.movieListViewModel = MovieListViewModel(movieListUseCase, delegate: self)
         
+        // maybe in willAppear
         self.movieListViewModel?.loadPopularMovies()
         
     }
     
-    func refreshList(_ movieList: MovieList?) {
-        // adapter reload data
+    func refreshList(_ movies: [MovieListItemViewModel]) {
+        // adapter takes care of refresh
     }
     
 }

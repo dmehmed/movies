@@ -140,9 +140,7 @@
 		28768820276A113F002A047F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				2876883B276B6145002A047F /* MovieListItemViewModel.swift */,
-				28768839276B5323002A047F /* MovieListViewModel.swift */,
-				28A4F3D8276A0FFB00382CF0 /* MovieListViewController.swift */,
+				2876883D276B6FC1002A047F /* MovieList */,
 				28A4F3DA276A0FFB00382CF0 /* Main.storyboard */,
 			);
 			path = Presentation;
@@ -185,6 +183,40 @@
 				28768837276A1FBD002A047F /* Request.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		2876883D276B6FC1002A047F /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				2876883F276B6FE0002A047F /* View */,
+				2876883E276B6FD3002A047F /* ViewModel */,
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
+		2876883E276B6FD3002A047F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2876883B276B6145002A047F /* MovieListItemViewModel.swift */,
+				28768839276B5323002A047F /* MovieListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2876883F276B6FE0002A047F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				28768840276B7021002A047F /* MovieListTableView */,
+				28A4F3D8276A0FFB00382CF0 /* MovieListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28768840276B7021002A047F /* MovieListTableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MovieListTableView;
 			sourceTree = "<group>";
 		};
 		28A4F3C8276A0FFB00382CF0 = {
