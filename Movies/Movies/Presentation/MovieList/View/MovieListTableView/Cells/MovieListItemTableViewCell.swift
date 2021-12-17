@@ -31,7 +31,7 @@ public class MovieListItemTableViewCell: UITableViewCell {
     
     private func updatePoster() {
         
-        self.posterImageView.image = nil
+        self.posterImageView.image = UIImage(named: "DefaultPosterImage")
         
         // MARK: - Refactor this logic !
         if let posterURL = URL(string: self.viewModel.posterPath ?? ""),
