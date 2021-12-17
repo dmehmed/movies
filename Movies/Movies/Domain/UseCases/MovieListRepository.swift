@@ -9,4 +9,5 @@ import Foundation
 
 public protocol MovieListRepository {
     func fetchPopularMovies(_ completion: @escaping (MovieList?) -> Void)
+    func fetchTopRatedMovies(_ completion: @escaping (MovieList?) -> Void)
 }

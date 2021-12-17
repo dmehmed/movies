@@ -1,13 +1,13 @@
 //
-//  FetchPopularMoviesUseCase.swift
+//  FetchTopRatedMoviesUseCase.swift
 //  Movies
 //
-//  Created by Deniz Mehmed on 15.12.21.
+//  Created by Deniz Mehmed on 17.12.21.
 //
 
 import Foundation
 
-public struct FetchPopularMoviesUseCase: FetchMoviesUseCase {
+public struct FetchTopRatedMoviesUseCase: FetchMoviesUseCase {
     
     private let repository: MovieListRepository
     
@@ -16,7 +16,7 @@ public struct FetchPopularMoviesUseCase: FetchMoviesUseCase {
     }
     
     public func execute(_ completion: @escaping (MovieList?) -> Void) {
-        self.repository.fetchPopularMovies(completion)
+        self.repository.fetchTopRatedMovies(completion)
     }
     
 }
