@@ -9,9 +9,7 @@ import Foundation
 
 public class Network {
     
-    private var baseURL = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=87c18a6eca3e6995e82fab7f60b9a8a7")
-    
-    public func perform(_ request: PopularMoviesRequest, with completion: @escaping (MovieList?) -> Void) {
+    public func perform<RequestType: Request>(_ request: RequestType, with completion: @escaping (MovieList?) -> Void) {
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: request.url)) { data, response, error in
             

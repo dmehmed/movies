@@ -14,7 +14,7 @@ public protocol MovieListTableView {
 
 public class MovieListTableViewAdapter: NSObject, MovieListTableView {
     
-    private var tableView: UITableView!
+    private var tableView: UITableView
     private var movies: [MovieListItemViewModel] = []
     
     public init(_ tableView: UITableView) {
