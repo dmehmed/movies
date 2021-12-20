@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		280EB245276C9D4100802D9D /* FetchMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280EB244276C9D4100802D9D /* FetchMoviesUseCase.swift */; };
 		280EB247276C9D9500802D9D /* FetchTopRatedMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280EB246276C9D9500802D9D /* FetchTopRatedMoviesUseCase.swift */; };
-		280EB24D276C9F4500802D9D /* TopRatedMoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280EB24C276C9F4500802D9D /* TopRatedMoviesRepository.swift */; };
 		2826547227706C860007F748 /* TopRatedMoviesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2826547127706C860007F748 /* TopRatedMoviesRequest.swift */; };
+		28265478277079CD0007F748 /* DefaultMovieListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28265477277079CD0007F748 /* DefaultMovieListRepository.swift */; };
 		28768823276A11AC002A047F /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28768822276A11AC002A047F /* MovieList.swift */; };
 		28768825276A1277002A047F /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28768824276A1277002A047F /* Movie.swift */; };
 		28768827276A1469002A047F /* FetchPopularMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28768826276A1469002A047F /* FetchPopularMoviesUseCase.swift */; };
 		28768829276A1600002A047F /* MovieListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28768828276A1600002A047F /* MovieListRepository.swift */; };
-		2876882C276A1695002A047F /* PopularMoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2876882B276A1695002A047F /* PopularMoviesRepository.swift */; };
 		2876882F276A1769002A047F /* MovieListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2876882E276A1769002A047F /* MovieListService.swift */; };
 		28768832276A1A3D002A047F /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28768831276A1A3D002A047F /* Network.swift */; };
 		28768834276A1A79002A047F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28768833276A1A79002A047F /* Service.swift */; };
@@ -56,13 +55,12 @@
 /* Begin PBXFileReference section */
 		280EB244276C9D4100802D9D /* FetchMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMoviesUseCase.swift; sourceTree = "<group>"; };
 		280EB246276C9D9500802D9D /* FetchTopRatedMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTopRatedMoviesUseCase.swift; sourceTree = "<group>"; };
-		280EB24C276C9F4500802D9D /* TopRatedMoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMoviesRepository.swift; sourceTree = "<group>"; };
 		2826547127706C860007F748 /* TopRatedMoviesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMoviesRequest.swift; sourceTree = "<group>"; };
+		28265477277079CD0007F748 /* DefaultMovieListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMovieListRepository.swift; sourceTree = "<group>"; };
 		28768822276A11AC002A047F /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		28768824276A1277002A047F /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		28768826276A1469002A047F /* FetchPopularMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPopularMoviesUseCase.swift; sourceTree = "<group>"; };
 		28768828276A1600002A047F /* MovieListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListRepository.swift; sourceTree = "<group>"; };
-		2876882B276A1695002A047F /* PopularMoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesRepository.swift; sourceTree = "<group>"; };
 		2876882E276A1769002A047F /* MovieListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListService.swift; sourceTree = "<group>"; };
 		28768831276A1A3D002A047F /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		28768833276A1A79002A047F /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -174,8 +172,7 @@
 		2876882A276A164B002A047F /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				2876882B276A1695002A047F /* PopularMoviesRepository.swift */,
-				280EB24C276C9F4500802D9D /* TopRatedMoviesRepository.swift */,
+				28265477277079CD0007F748 /* DefaultMovieListRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -430,17 +427,16 @@
 				28768842276B91CA002A047F /* MovieListItemTableViewCell.swift in Sources */,
 				28A4F3D9276A0FFB00382CF0 /* MovieListViewController.swift in Sources */,
 				2876883A276B5323002A047F /* MovieListViewModel.swift in Sources */,
-				280EB24D276C9F4500802D9D /* TopRatedMoviesRepository.swift in Sources */,
 				28A4F3D5276A0FFB00382CF0 /* AppDelegate.swift in Sources */,
 				2876882F276A1769002A047F /* MovieListService.swift in Sources */,
 				28768823276A11AC002A047F /* MovieList.swift in Sources */,
 				28768827276A1469002A047F /* FetchPopularMoviesUseCase.swift in Sources */,
 				28768825276A1277002A047F /* Movie.swift in Sources */,
+				28265478277079CD0007F748 /* DefaultMovieListRepository.swift in Sources */,
 				280EB245276C9D4100802D9D /* FetchMoviesUseCase.swift in Sources */,
 				28768836276A1E13002A047F /* PopularMoviesRequest.swift in Sources */,
 				2876883C276B6145002A047F /* MovieListItemViewModel.swift in Sources */,
 				28768834276A1A79002A047F /* Service.swift in Sources */,
-				2876882C276A1695002A047F /* PopularMoviesRepository.swift in Sources */,
 				28768829276A1600002A047F /* MovieListRepository.swift in Sources */,
 				2826547227706C860007F748 /* TopRatedMoviesRequest.swift in Sources */,
 				280EB247276C9D9500802D9D /* FetchTopRatedMoviesUseCase.swift in Sources */,

@@ -28,12 +28,10 @@ class MovieListViewController: UIViewController, MovieListViewModelDelegate {
         self.movieListTableViewAdapter = MovieListTableViewAdapter(movieListTableView)
         
         let movieListService = MovieListService()
+        let movieListRepository = DefaultMovieListRepository(movieListService)
         
-        let popularMovieListRepository = PopularMoviesRepository(movieListService)
-        let topRatedMovieListRepository = TopRatedMoviesRepository(movieListService)
-        
-        let popularMovieListUseCase = FetchPopularMoviesUseCase(popularMovieListRepository)
-        let topRatedMovieListUseCase = FetchTopRatedMoviesUseCase(topRatedMovieListRepository)
+        let popularMovieListUseCase = FetchPopularMoviesUseCase(movieListRepository)
+        let topRatedMovieListUseCase = FetchTopRatedMoviesUseCase(movieListRepository)
         
         self.movieListViewModel = MovieListViewModel([popularMovieListUseCase, topRatedMovieListUseCase],
                                                      delegate: self)
@@ -71,7 +69,7 @@ extension MovieListViewController {
     
     private func setupButtons() {
         self.popularMoviesButton.layer.cornerRadius = MovieListViewController.BUTTON_CORNER_RADIUS
-        self.topRatedMoviesButton.layer.cornerRadius =  MovieListViewController.BUTTON_CORNER_RADIUS
+        self.topRatedMoviesButton.layer.cornerRadius = MovieListViewController.BUTTON_CORNER_RADIUS
     }
     
     private func deselectButtons() {
