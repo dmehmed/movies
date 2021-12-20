@@ -25,7 +25,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Popular"/>
                                         <connections>
-                                            <action selector="didPressPopularMoviesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r2k-jS-9tJ"/>
+                                            <action selector="didPressPopularMoviesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cVa-52-ETj"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndl-44-qRS">
@@ -35,7 +35,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Top Rated"/>
                                         <connections>
-                                            <action selector="didPressTopRatedMoviesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3tz-Xu-gGv"/>
+                                            <action selector="didPressTopRatedMoviesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xFg-Hq-yYW"/>
                                         </connections>
                                     </button>
                                 </subviews>

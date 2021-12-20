@@ -16,12 +16,14 @@ public class PopularMoviesRepository: MovieListRepository {
     }
     
     public func fetchPopularMovies(_ completion: @escaping (MovieList?) -> Void) {
+        
         self.service.getPopularMovies { result in
             print(result)
             // parse func in this file filter etc funcs
             
             completion(result)
         }
+        
     }
     
     // MARK: - Refactor

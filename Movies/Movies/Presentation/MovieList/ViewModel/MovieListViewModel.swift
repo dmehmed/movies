@@ -13,21 +13,36 @@ public protocol MovieListViewModelDelegate {
 
 public protocol MovieListViewModelProtocol {
     func loadPopularMovies()
+    func loadTopRatedMovies()
 }
 
 public struct MovieListViewModel: MovieListViewModelProtocol {
     
-    private let useCase: FetchPopularMoviesUseCase
+    private let useCases: [FetchMoviesUseCase]
     private let delegate: MovieListViewModelDelegate
     
-    public init(_ useCase: FetchPopularMoviesUseCase, delegate: MovieListViewModelDelegate) {
-        self.useCase = useCase
+    public init(_ useCases: [FetchMoviesUseCase], delegate: MovieListViewModelDelegate) {
+        self.useCases = useCases
         self.delegate = delegate
     }
     
     public func loadPopularMovies() {
         
-        self.useCase.execute { data in
+        self.useCases.first?.execute { data in
+            
+            guard let movies = self.getMovieListItemViewModels(from: data) else {
+                return
+            }
+            
+            self.delegate.refreshList(movies)
+            
+        }
+        
+    }
+    
+    public func loadTopRatedMovies() {
+        
+        self.useCases.last?.execute { data in
             
             guard let movies = self.getMovieListItemViewModels(from: data) else {
                 return

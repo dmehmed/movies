@@ -16,9 +16,11 @@ public class TopRatedMoviesRepository: MovieListRepository {
     }
     
     public func fetchTopRatedMovies(_ completion: @escaping (MovieList?) -> Void) {
+        
         self.service.getTopRatedMovies { result in
             completion(result)
         }
+        
     }
     
     public func fetchPopularMovies(_ completion: @escaping (MovieList?) -> Void) { }

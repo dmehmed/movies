@@ -28,9 +28,15 @@ class MovieListViewController: UIViewController, MovieListViewModelDelegate {
         self.movieListTableViewAdapter = MovieListTableViewAdapter(movieListTableView)
         
         let movieListService = MovieListService()
-        let movieListRepository = PopularMoviesRepository(movieListService)
-        let movieListUseCase = FetchPopularMoviesUseCase(movieListRepository)
-        self.movieListViewModel = MovieListViewModel(movieListUseCase, delegate: self)
+        
+        let popularMovieListRepository = PopularMoviesRepository(movieListService)
+        let topRatedMovieListRepository = TopRatedMoviesRepository(movieListService)
+        
+        let popularMovieListUseCase = FetchPopularMoviesUseCase(popularMovieListRepository)
+        let topRatedMovieListUseCase = FetchTopRatedMoviesUseCase(topRatedMovieListRepository)
+        
+        self.movieListViewModel = MovieListViewModel([popularMovieListUseCase, topRatedMovieListUseCase],
+                                                     delegate: self)
         
         self.didPressPopularMoviesButton(popularMoviesButton!)
         
@@ -55,7 +61,7 @@ class MovieListViewController: UIViewController, MovieListViewModelDelegate {
         deselectButtons()
         
         self.topRatedMoviesButton.isSelected = true
-        //self.movieListViewModel?.loadPopularMovies()
+        self.movieListViewModel?.loadTopRatedMovies()
         
     }
     
