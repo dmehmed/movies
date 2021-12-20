@@ -24,4 +24,7 @@ public class PopularMoviesRepository: MovieListRepository {
         }
     }
     
+    // MARK: - Refactor
+    public func fetchTopRatedMovies(_ completion: @escaping (MovieList?) -> Void) { }
+    
 }
