@@ -11,6 +11,7 @@ class MovieListViewController: UIViewController, MovieListViewModelDelegate {
     
     static let BUTTON_CORNER_RADIUS: CGFloat = 10
     
+    // collection
     @IBOutlet var popularMoviesButton: UIButton!
     @IBOutlet var topRatedMoviesButton: UIButton!
     
@@ -47,7 +48,7 @@ class MovieListViewController: UIViewController, MovieListViewModelDelegate {
     // MARK: - IBActions
     @IBAction func didPressPopularMoviesButton(_ sender: Any) {
         
-        deselectButtons()
+        self.deselectButtons()
         
         self.popularMoviesButton.isSelected = true
         self.movieListViewModel?.loadPopularMovies()
@@ -56,7 +57,7 @@ class MovieListViewController: UIViewController, MovieListViewModelDelegate {
     
     @IBAction func didPressTopRatedMoviesButton(_ sender: Any) {
         
-        deselectButtons()
+        self.deselectButtons()
         
         self.topRatedMoviesButton.isSelected = true
         self.movieListViewModel?.loadTopRatedMovies()
