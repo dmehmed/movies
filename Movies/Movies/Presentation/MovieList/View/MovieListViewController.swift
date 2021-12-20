@@ -9,7 +9,12 @@ import UIKit
 
 class MovieListViewController: UIViewController, MovieListViewModelDelegate {
     
-    @IBOutlet weak var movieListTableView: UITableView!
+    static let BUTTON_CORNER_RADIUS: CGFloat = 10
+    
+    @IBOutlet var popularMoviesButton: UIButton!
+    @IBOutlet var topRatedMoviesButton: UIButton!
+    
+    @IBOutlet var movieListTableView: UITableView!
     
     private var movieListViewModel: MovieListViewModelProtocol?
     private var movieListTableViewAdapter: MovieListTableView?
@@ -18,20 +23,54 @@ class MovieListViewController: UIViewController, MovieListViewModelDelegate {
         
         super.viewDidLoad()
         
-        movieListTableViewAdapter = MovieListTableViewAdapter(movieListTableView)
+        self.setupButtons()
+        
+        self.movieListTableViewAdapter = MovieListTableViewAdapter(movieListTableView)
         
         let movieListService = MovieListService()
         let movieListRepository = PopularMoviesRepository(movieListService)
         let movieListUseCase = FetchPopularMoviesUseCase(movieListRepository)
         self.movieListViewModel = MovieListViewModel(movieListUseCase, delegate: self)
         
-        self.movieListViewModel?.loadPopularMovies()
+        self.didPressPopularMoviesButton(popularMoviesButton!)
         
     }
     
     func refreshList(_ movies: [MovieListItemViewModel]) {
-        movieListTableViewAdapter?.reload(movies)
+        self.movieListTableViewAdapter?.reload(movies)
+    }
+    
+    // MARK: - IBActions
+    @IBAction func didPressPopularMoviesButton(_ sender: Any) {
+        
+        deselectButtons()
+        
+        self.popularMoviesButton.isSelected = true
+        self.movieListViewModel?.loadPopularMovies()
+        
+    }
+    
+    @IBAction func didPressTopRatedMoviesButton(_ sender: Any) {
+        
+        deselectButtons()
+        
+        self.topRatedMoviesButton.isSelected = true
+        //self.movieListViewModel?.loadPopularMovies()
+        
     }
     
 }
 
+extension MovieListViewController {
+    
+    private func setupButtons() {
+        self.popularMoviesButton.layer.cornerRadius = MovieListViewController.BUTTON_CORNER_RADIUS
+        self.topRatedMoviesButton.layer.cornerRadius =  MovieListViewController.BUTTON_CORNER_RADIUS
+    }
+    
+    private func deselectButtons() {
+        self.popularMoviesButton.isSelected = false
+        self.topRatedMoviesButton.isSelected = false
+    }
+    
+}

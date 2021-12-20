@@ -15,8 +15,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XVC-nr-JQJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR2-Jf-5Wd">
+                                        <rect key="frame" x="10" y="10" width="192" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Popular"/>
+                                        <connections>
+                                            <action selector="didPressPopularMoviesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r2k-jS-9tJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndl-44-qRS">
+                                        <rect key="frame" x="212" y="10" width="192" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Top Rated"/>
+                                        <connections>
+                                            <action selector="didPressTopRatedMoviesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3tz-Xu-gGv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="10" bottom="10" trailing="10"/>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nRM-fn-l0g">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -25,19 +51,25 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nRM-fn-l0g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2c5-5e-90Z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nRM-fn-l0g" secondAttribute="bottom" id="4GU-Lv-Ng4"/>
+                            <constraint firstItem="XVC-nr-JQJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7qw-4q-HRr"/>
+                            <constraint firstItem="nRM-fn-l0g" firstAttribute="top" secondItem="XVC-nr-JQJ" secondAttribute="bottom" id="OZ9-VN-63Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XVC-nr-JQJ" secondAttribute="trailing" id="PQU-w9-6oV"/>
+                            <constraint firstItem="XVC-nr-JQJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SmV-cF-Ink"/>
                             <constraint firstItem="nRM-fn-l0g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="duh-bq-sLo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nRM-fn-l0g" secondAttribute="trailing" id="mAV-Qe-sSQ"/>
+                            <constraint firstItem="gR2-Jf-5Wd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0446429" id="tT3-2Z-uOd"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="movieListTableView" destination="nRM-fn-l0g" id="Xfh-ld-yeK"/>
+                        <outlet property="movieListTableView" destination="nRM-fn-l0g" id="A7u-7c-Nv8"/>
+                        <outlet property="popularMoviesButton" destination="gR2-Jf-5Wd" id="Ic8-51-CtI"/>
+                        <outlet property="topRatedMoviesButton" destination="Ndl-44-qRS" id="1Xv-Vp-dl7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="68"/>
+            <point key="canvasLocation" x="105.79710144927537" y="67.633928571428569"/>
         </scene>
     </scenes>
 </document>
